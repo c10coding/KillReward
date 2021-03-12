@@ -6,6 +6,9 @@ commands:
   killreward:
     permission: killreward.use
     description: The base command for this plugin
+    aliases:
+      - killr
+      - kreward
 
 permissions:
   killreward.use:
