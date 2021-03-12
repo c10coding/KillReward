@@ -1,0 +1,13 @@
+name: KillReward
+version: ${project.version}
+main: net.dohaw.killreward.KillRewardPlugin
+
+commands:
+  killreward:
+    permission: killreward.use
+    description: The base command for this plugin
+
+permissions:
+  killreward.use:
+    default: op
+    description: The base permission for this plugin

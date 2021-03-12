@@ -1,0 +1,9 @@
+Applicable World: world
+
+Permissions:
+  test-example:
+    Commands Ran:
+      - "eco give %player% 5"
+  test-example2:
+    Commands Ran:
+      - "eco give %player% 10"
