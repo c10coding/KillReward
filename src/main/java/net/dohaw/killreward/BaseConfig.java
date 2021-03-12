@@ -1,7 +1,6 @@
 package net.dohaw.killreward;
 
 import net.dohaw.corelib.Config;
-import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.HashSet;
 import java.util.List;
@@ -26,6 +25,10 @@ public class BaseConfig extends Config {
 
     public List<String> getCommandsRanPerPermission(String permission){
         return config.getStringList("Permissions." + permission + ".Commands Ran");
+    }
+
+    public String getApplicableWorld(){
+        return config.getString("Applicable World", "world");
     }
 
 }

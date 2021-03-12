@@ -26,6 +26,9 @@ import java.util.*;
 public final class KillRewardPlugin extends JavaPlugin {
 
     @Getter
+    private String applicableWorld;
+
+    @Getter
     private Map<Permission, List<String>> permissionsAndCommands = new HashMap<>();
 
     @Getter
@@ -37,7 +40,7 @@ public final class KillRewardPlugin extends JavaPlugin {
         CoreLib.setInstance(this);
         JPUtils.validateFiles("config.yml");
         this.baseConfig = new BaseConfig();
-        loadPermissionsAndCommands();
+        loadConfigValues();
         JPUtils.registerCommand("killreward", new KillRewardCommand(this));
         JPUtils.registerEvents(new KillListener(this));
     }
@@ -45,7 +48,8 @@ public final class KillRewardPlugin extends JavaPlugin {
     @Override
     public void onDisable() {}
 
-    public void loadPermissionsAndCommands(){
+    public void loadConfigValues(){
+        this.applicableWorld = baseConfig.getApplicableWorld();
         this.permissionsAndCommands.clear();
         Set<String> permissions = baseConfig.getPermissions();
         PluginManager pm = Bukkit.getPluginManager();

@@ -19,7 +19,7 @@ public class KillRewardCommand implements CommandExecutor {
         if(sender.hasPermission("killreward.use")){
             if(args[0].equalsIgnoreCase("reload")){
                 plugin.getBaseConfig().reloadConfig();
-                plugin.loadPermissionsAndCommands();
+                plugin.loadConfigValues();
                 rf.sendMessage("You have reloaded the KillReward config!");
             }else if(args[0].equalsIgnoreCase("help")){
                 rf.sendMessage("&f&lCommands:");
