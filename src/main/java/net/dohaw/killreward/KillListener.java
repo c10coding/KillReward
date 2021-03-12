@@ -29,7 +29,6 @@ public class KillListener implements Listener {
                     List<String> commandsRan = entry.getValue();
                     for(String command : commandsRan){
                         String editedCommand = command.replace("%player%", killer.getName());
-                        System.out.println("COMMAND: " + editedCommand);
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), editedCommand);
                     }
                 }
